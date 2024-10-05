@@ -1,7 +1,3 @@
-Here are the **array problems** in the **LeetCode-style format**, based on the syllabus I provided earlier:
-
----
-
 ### **Problem 1: Maximum Product of Two Integers in an Array**  
 **Solved**  
 Given an array of integers `nums`, return the maximum product of two integers in the array.
@@ -210,7 +206,3 @@ Example 3:
 - n == `nums.length`
 - 1 <= n <= 10^5
 - 1 <= `nums[i]` <= n
-
----
-
-These problems should give you a solid start on practicing arrays in JavaScript. Once you've solved these, we can move on to the next data structure. Let me know when you're ready!
