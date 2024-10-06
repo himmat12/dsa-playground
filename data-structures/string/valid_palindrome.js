@@ -1,7 +1,7 @@
 const str = "A man, a plan, a canal: Panama";
 
 function isPalindrome(str) {
-    // reversedStr stores filters and stores only lowercase chars from 'a' to 'z' as per the problem constraint
+  // reversedStr filters and stores only lowercase chars from 'a' to 'z' as per the problem constraint
   const filteredStr = str
     .toLowerCase() // converts the string into lowercase
     .split("") // splits each chars in a string and return a new array of chars
