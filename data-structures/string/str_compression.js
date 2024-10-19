@@ -21,7 +21,7 @@ function compressStr(chars) {
     // write the character
     chars[writeIndex] = char;
 
-    // increment the pointer to next index once the char is appended in chars
+    // increment the pointer to next index once the char is updated in chars
     writeIndex++;
 
     // Write the count if greater than 1
