@@ -120,6 +120,10 @@ Each term describes how many times each digit appears consecutively in the previ
    - **Example 1:**  
      Input: `chars = ["a", "a", "b", "b", "c", "c", "c"]`  
      Output: `6`, modified array: `["a", "2", "b", "2", "c", "3"]`
+     
+   - **Example 2:**  
+     Input: `chars = ["a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]`  
+     Output: `3`, modified array: `["a", "1", "4"]`
    
    - **Constraints:**
      - `1 <= chars.length <= 2000`
