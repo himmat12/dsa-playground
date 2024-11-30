@@ -44,7 +44,7 @@ export class LinkedList {
       second !== null ||
       afterSecond !== null
     ) {
-      // lets supose if our target k = 2 then:
+      // lets suppose if our target k = 2 then:
 
       let first = k.next; // 3
       let second = first.next; // 4
@@ -64,9 +64,43 @@ export class LinkedList {
   }
 
   /**
-   * swaps next two non adjacent nodes in a list after the given target node
+   * swaps the values of the kth node from the beginning and the kth node from the end.
    */
-  swap(head, k) {}
+  swap(head, k) {
+    // validating if the head or kth node is null
+    if (head === null || k === null) {
+      return;
+    }
+    
+    let currentNode = this.head;
+    let kthCount = 0; // position of kth item in the list which will be (kthCount - 1) index
+
+    while (currentNode !== k) {
+      kthCount += 1;
+      currentNode = currentNode.next;
+    }
+
+    // setting the left pointer for the kth item
+    currentNode = this.head;
+    for (let i = 0; i < kthCount; i++) {
+      currentNode = currentNode.next;
+    }
+    let leftNode = currentNode;
+
+    // setting the right pointer
+    let rightNode = this.head;
+    while (currentNode !== null) {
+      currentNode = currentNode.next;
+      rightNode = rightNode.next;
+    }
+
+    // swapping the values of nodes
+    const tempNode = leftNode;
+    leftNode.setItem(rightNode.getItem());
+    rightNode.setItem(tempNode.getItem());
+
+    return head;
+  }
 
   /**
    * returns the string representation of all nodes in the linked list after iterating through all the nodes in the list

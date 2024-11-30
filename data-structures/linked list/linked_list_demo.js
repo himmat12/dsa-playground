@@ -24,4 +24,9 @@ console.log("After removing: " + list.toString());
 
 // swapping adjacent nodes
 list.swapAfter(n2);
-console.log("After swapping: " + list.toString());
+console.log("Adjacent nodes swapping: " + list.toString());
+
+// swapping non adjacent nodes "block the above swapAfter invoked line to see the output of this method
+// (bug - different approach was implemented while writing this solution, was inspired from neetcode.io solution https://youtu.be/4LsrgMyQIjQ)"
+list.swap(n1, n3);
+console.log("Non adjacent nodes swapping: " + list.toString());
