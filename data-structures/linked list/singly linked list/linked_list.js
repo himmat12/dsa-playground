@@ -19,6 +19,24 @@ export class LinkedList {
   }
 
   /**
+   * inserts new node before the given after node in the list
+   */
+  insertBefore(afterNode, newNode) {
+    let currentNode = this.head;
+    let prevNode = null;
+
+    // iterating to find the previous node before the given afterNode
+    while (currentNode != afterNode) {
+      prevNode = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    // updating the links between nodes to insert newNode before the afterNode
+    newNode.setNext(afterNode);
+    prevNode.setNext(newNode);
+  }
+
+  /**
    * removes the next node from the given previous node in the list
    */
   removeAfter(prevNode) {
@@ -71,7 +89,7 @@ export class LinkedList {
     if (head === null || k === null) {
       return;
     }
-    
+
     let currentNode = this.head;
     let kthCount = 0; // position of kth item in the list which will be (kthCount - 1) index
 
@@ -100,6 +118,25 @@ export class LinkedList {
     rightNode.setItem(tempNode.getItem());
 
     return head;
+  }
+
+  /**
+   * this method changes the item value for all nodes
+   */
+  changeAll(data) {
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      currentNode.setItem(data);
+      currentNode = currentNode.next;
+    }
+  }
+
+  /**
+   * this method change the item of node after the given target node
+   */
+  changeAfter(k, data) {
+    const currentNode = k.next;
+    currentNode.setItem(data);
   }
 
   /**
