@@ -22,20 +22,22 @@ export class LinkedList {
    * inserts new node before the given after node in the list
    */
   insertBefore(afterNode, newNode) {
-    let currentNode = this.head;
-    let prevNode = null;
+    // validating null parameter edge case
+    if (afterNode !== null && newNode !== null) {
+      let currentNode = this.head;
+      let prevNode = null;
 
-    // iterating to find the previous node before the given afterNode
-    while (currentNode != afterNode) {
-      prevNode = currentNode;
-      currentNode = currentNode.next;
+      // iterating to find the previous node before the given afterNode
+      while (currentNode != afterNode) {
+        prevNode = currentNode;
+        currentNode = currentNode.next;
+      }
+
+      // updating the links between nodes to insert newNode before the afterNode
+      newNode.setNext(afterNode);
+      prevNode.setNext(newNode);
     }
-
-    // updating the links between nodes to insert newNode before the afterNode
-    newNode.setNext(afterNode);
-    prevNode.setNext(newNode);
   }
-
   /**
    * removes the next node from the given previous node in the list
    */
